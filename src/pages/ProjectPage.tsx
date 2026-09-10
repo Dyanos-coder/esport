@@ -3,10 +3,11 @@ import {
   Rocket, Flag, Compass, Radio, CheckCircle2, ArrowRight, Sparkles, Quote,
 } from 'lucide-react';
 import { useRouter } from '@/router';
-import { SectionTitle, PageHero, StatCard } from '@/components/ui';
+import { SectionTitle, StatCard } from '@/components/ui';
 import {
   heroImage, footballImage, beninImage, beninImage2, gamingSetupImage, cultureImage, cultureImage2,
 } from '@/data';
+import logoColor from '@/assets/Logo KarreX-1 green white1.png';
 
 const specificObjectives = [
   'Développer et structurer la pratique de l’e-sport en Afrique.',
@@ -95,12 +96,30 @@ export default function ProjectPage() {
 
   return (
     <div className="animate-fade-in">
-      <PageHero
-        badge="PROJET KARRE-X"
-        title={<>Football <span className="text-lime-500">•</span> Gaming <span className="text-lime-500">•</span> Téléréalité</>}
-        desc="Une grande compétition panafricaine autour d'eFootball, pensée comme une expérience de divertissement, de contenu et de découverte du Bénin."
-        image={heroImage}
-      />
+      <section className="relative pt-28 md:pt-36 pb-16 md:pb-24 overflow-hidden">
+        <div className="absolute inset-0">
+          <img src={heroImage} alt="" className="w-full h-full object-cover opacity-20" />
+          <div className="absolute inset-0 bg-gradient-to-b from-navy-900/80 via-navy-900/90 to-navy-900" />
+          <div className="absolute inset-0 bg-grid opacity-30" />
+        </div>
+        <div className="container-x relative flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
+          <div className="max-w-3xl">
+            <span className="badge badge-lime mb-6 animate-fade-in">PROJET KARRE-X</span>
+            <h1 className="heading-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 animate-slide-up">
+              Football <span className="text-lime-500">•</span> Gaming <span className="text-lime-500">•</span> Téléréalité
+            </h1>
+            <p className="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+              Une grande compétition panafricaine autour d&apos;eFootball, pensée comme une expérience de divertissement,
+              de contenu et de découverte du Bénin.
+            </p>
+          </div>
+          <img
+            src={logoColor}
+            alt="KarreX"
+            className="hidden lg:block w-64 xl:w-80 flex-shrink-0 animate-float-glow"
+          />
+        </div>
+      </section>
 
       {/* CONTEXTE */}
       <section className="section-pad">
@@ -360,7 +379,7 @@ export default function ProjectPage() {
         </div>
       </section>
 
-      {/* CTA */}
+      {/*
       <section className="section-pad relative overflow-hidden">
         <div className="absolute inset-0 bg-gradient-to-br from-navy-850 via-navy-900 to-navy-850" />
         <div className="absolute inset-0 bg-radial-glow" />
@@ -387,6 +406,7 @@ export default function ProjectPage() {
           </div>
         </div>
       </section>
+      */}
     </div>
   );
 }
