@@ -16,7 +16,7 @@ export function SectionTitle({
   return (
     <div className={`flex flex-col gap-3 ${align === 'center' ? 'items-center text-center' : 'items-start text-left'} mb-12`}>
       {badge && (
-        <span className={`badge ${light ? 'badge-lime' : 'badge-cyan'}`}>
+        <span className={`badge ${light ? 'badge-lime' : 'badge-purple'}`}>
           {badge}
         </span>
       )}
@@ -79,11 +79,11 @@ export function StatCard({
 }: {
   value: string;
   label: string;
-  accent?: 'lime' | 'cyan';
+  accent?: 'lime' | 'purple';
 }) {
   return (
     <div className="glass-card p-6 md:p-8 text-center group hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1">
-      <div className={`heading-display text-5xl md:text-6xl mb-2 ${accent === 'lime' ? 'text-lime-500' : 'text-cyan-400'} text-shadow-glow`}>
+      <div className={`heading-display text-5xl md:text-6xl mb-2 ${accent === 'lime' ? 'text-lime-500' : 'text-purple-400'} text-shadow-glow`}>
         {value}
       </div>
       <div className="text-sm text-gray-400 uppercase tracking-wide font-medium">

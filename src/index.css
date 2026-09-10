@@ -27,13 +27,13 @@
     @apply font-display tracking-wide uppercase leading-none;
   }
   .text-gradient-lime {
-    background: linear-gradient(135deg, #C8FF33 0%, #B6F500 50%, #A6E100 100%);
+    background: linear-gradient(135deg, #D6FF66 0%, #BFFF00 50%, #9FD900 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
   }
-  .text-gradient-cyan {
-    background: linear-gradient(135deg, #5DD8F0 0%, #2EC5E6 100%);
+  .text-gradient-purple {
+    background: linear-gradient(135deg, #A156E8 0%, #8A2BE2 100%);
     -webkit-background-clip: text;
     background-clip: text;
     -webkit-text-fill-color: transparent;
@@ -45,10 +45,10 @@
     @apply bg-white/5 backdrop-blur-sm border border-white/10 rounded-2xl;
   }
   .btn-primary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-lime-500 text-navy-900 font-bold text-sm uppercase tracking-wide transition-all duration-300 hover:bg-lime-400 hover:shadow-[0_0_30px_rgba(182,245,0,0.4)] hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-lime-500 text-navy-900 font-bold text-sm uppercase tracking-wide transition-all duration-300 hover:bg-lime-400 hover:shadow-[0_0_30px_rgba(191,255,0,0.4)] hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-secondary {
-    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-transparent border-2 border-cyan-500 text-cyan-400 font-bold text-sm uppercase tracking-wide transition-all duration-300 hover:bg-cyan-500 hover:text-navy-900 hover:border-cyan-500 hover:-translate-y-0.5 active:translate-y-0;
+    @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-transparent border-2 border-purple-500 text-purple-400 font-bold text-sm uppercase tracking-wide transition-all duration-300 hover:bg-purple-500 hover:text-navy-900 hover:border-purple-500 hover:-translate-y-0.5 active:translate-y-0;
   }
   .btn-ghost {
     @apply inline-flex items-center justify-center gap-2 px-6 py-3 rounded-xl bg-white/5 border border-white/10 text-white font-semibold text-sm transition-all duration-300 hover:bg-white/10;
@@ -57,7 +57,7 @@
     @apply w-full px-4 py-3 rounded-xl bg-navy-950/80 border border-white/10 text-white placeholder-gray-500 focus:outline-none focus:border-lime-500 focus:ring-2 focus:ring-lime-500/20 transition-all duration-200;
   }
   .label-field {
-    @apply block text-sm font-semibold text-cyan-400 mb-2 uppercase tracking-wide;
+    @apply block text-sm font-semibold text-purple-400 mb-2 uppercase tracking-wide;
   }
   .badge {
     @apply inline-flex items-center gap-1.5 px-3 py-1 rounded-full text-xs font-bold uppercase tracking-wide;
@@ -65,8 +65,8 @@
   .badge-lime {
     @apply bg-lime-500/15 text-lime-400 border border-lime-500/30;
   }
-  .badge-cyan {
-    @apply bg-cyan-500/15 text-cyan-400 border border-cyan-500/30;
+  .badge-purple {
+    @apply bg-purple-500/15 text-purple-400 border border-purple-500/30;
   }
   .badge-success {
     @apply bg-success-500/15 text-success-400 border border-success-500/30;
@@ -84,7 +84,7 @@
 
 @layer utilities {
   .text-shadow-glow {
-    text-shadow: 0 0 30px rgba(182, 245, 0, 0.3);
+    text-shadow: 0 0 30px rgba(191,255,0, 0.3);
   }
   .bg-grid {
     background-image: linear-gradient(rgba(255, 255, 255, 0.03) 1px, transparent 1px),
@@ -92,7 +92,7 @@
     background-size: 40px 40px;
   }
   .bg-radial-glow {
-    background: radial-gradient(ellipse at center, rgba(182, 245, 0, 0.08) 0%, transparent 70%);
+    background: radial-gradient(ellipse at center, rgba(191,255,0, 0.08) 0%, transparent 70%);
   }
   .scrollbar-hide::-webkit-scrollbar {
     display: none;

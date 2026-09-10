@@ -13,15 +13,25 @@ export default {
           600: '#243E5C',
         },
         lime: {
-          400: '#C8FF33',
-          500: '#B6F500',
-          600: '#A6E100',
-          700: '#8FB800',
+          400: '#D6FF66',
+          500: '#BFFF00',
+          600: '#9FD900',
+          700: '#7FAD00',
+        },
+        purple: {
+          400: '#A156E8',
+          500: '#8A2BE2',
+          600: '#7525C0',
         },
         cyan: {
           400: '#5DD8F0',
           500: '#2EC5E6',
           600: '#1A9FC0',
+        },
+        crimson: {
+          400: '#FF334D',
+          500: '#FF0020',
+          600: '#D9001B',
         },
         success: {
           400: '#4ADE80',
@@ -47,6 +57,7 @@ export default {
         'fade-in': 'fadeIn 0.6s ease-out forwards',
         'slide-up': 'slideUp 0.5s ease-out forwards',
         'pulse-glow': 'pulseGlow 2s ease-in-out infinite',
+        'float-glow': 'floatGlow 4s ease-in-out infinite',
         'shimmer': 'shimmer 3s linear infinite',
         'count-up': 'countUp 0.8s ease-out forwards',
       },
@@ -60,8 +71,12 @@ export default {
           '100%': { opacity: '1', transform: 'translateY(0)' },
         },
         pulseGlow: {
-          '0%, 100%': { boxShadow: '0 0 20px rgba(182, 245, 0, 0.3)' },
-          '50%': { boxShadow: '0 0 40px rgba(182, 245, 0, 0.6)' },
+          '0%, 100%': { boxShadow: '0 0 20px rgba(191, 255, 0, 0.3)' },
+          '50%': { boxShadow: '0 0 40px rgba(191, 255, 0, 0.6)' },
+        },
+        floatGlow: {
+          '0%, 100%': { transform: 'translateY(0)', filter: 'drop-shadow(0 0 30px rgba(191,255,0,0.35))' },
+          '50%': { transform: 'translateY(-18px)', filter: 'drop-shadow(0 0 60px rgba(191,255,0,0.6))' },
         },
         shimmer: {
           '0%': { backgroundPosition: '-200% center' },

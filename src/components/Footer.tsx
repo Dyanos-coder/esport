@@ -1,9 +1,11 @@
-import { Gamepad2, Mail, Phone, MapPin, Youtube, Instagram, Facebook, Twitter } from 'lucide-react';
+import { Mail, Phone, MapPin, Youtube, Instagram, Facebook, Twitter } from 'lucide-react';
 import { useRouter, type Route } from '@/router';
 import { useI18n } from '@/i18n';
+import logo from '@/assets/Logo KarreX-3 NOIR.png';
 
 const footerLinks: { route: Route; key: string }[] = [
   { route: 'home', key: 'nav.home' },
+  { route: 'project', key: 'nav.project' },
   { route: 'concept', key: 'nav.concept' },
   { route: 'countries', key: 'nav.countries' },
   { route: 'register', key: 'nav.register' },
@@ -33,11 +35,9 @@ export default function Footer() {
           {/* Brand */}
           <div className="md:col-span-1">
             <div className="flex items-center gap-2 mb-4">
-              <div className="w-9 h-9 rounded-lg bg-lime-500 flex items-center justify-center">
-                <Gamepad2 className="w-5 h-5 text-navy-900" strokeWidth={2.5} />
-              </div>
+             
               <span className="font-display text-xl tracking-wide text-white">
-                AFN<span className="text-lime-500"> CUP</span>
+                KARRE<span className="text-lime-500">•X</span>
               </span>
             </div>
             <p className="text-sm text-gray-400 leading-relaxed max-w-xs">
@@ -57,7 +57,7 @@ export default function Footer() {
 
           {/* Nav */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-400 mb-4">
               {t('footer.nav.title')}
             </h4>
             <div className="grid grid-cols-2 gap-x-4 gap-y-2">
@@ -75,7 +75,7 @@ export default function Footer() {
 
           {/* Legal */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-400 mb-4">
               {t('footer.legal.title')}
             </h4>
             <div className="flex flex-col gap-2">
@@ -93,15 +93,15 @@ export default function Footer() {
 
           {/* Contact */}
           <div>
-            <h4 className="text-xs font-bold uppercase tracking-wider text-cyan-400 mb-4">
+            <h4 className="text-xs font-bold uppercase tracking-wider text-purple-400 mb-4">
               {t('footer.contact.title')}
             </h4>
             <div className="flex flex-col gap-3">
-              <a href="mailto:contact@afncup.africa" className="flex items-center gap-2 text-sm text-gray-400 hover:text-lime-500 transition-colors">
-                <Mail className="w-4 h-4" /> contact@afncup.africa
+              <a href="mailto:contact@karrex.com" className="flex items-center gap-2 text-sm text-gray-400 hover:text-lime-500 transition-colors">
+                <Mail className="w-4 h-4" /> contact@karre-x.com
               </a>
               <a href="tel:+22901000000" className="flex items-center gap-2 text-sm text-gray-400 hover:text-lime-500 transition-colors">
-                <Phone className="w-4 h-4" /> +229 01 00 00 00
+                <Phone className="w-4 h-4" /> +229 62 04 85 27
               </a>
               <div className="flex items-center gap-2 text-sm text-gray-400">
                 <MapPin className="w-4 h-4" /> Cotonou, Bénin
@@ -112,7 +112,7 @@ export default function Footer() {
 
         <div className="mt-12 pt-8 border-t border-white/10 flex flex-col md:flex-row items-center justify-between gap-4">
           <p className="text-xs text-gray-500">
-            © 2026 AFN eFootball Cup. {t('footer.rights')}
+            © 2026 KarreX. {t('footer.rights')}
           </p>
           <p className="text-xs text-gray-500">
             {t('footer.made')} 🌍

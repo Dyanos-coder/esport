@@ -3,7 +3,6 @@ import { CheckCircle2, Info, Send, ShieldCheck } from 'lucide-react';
 import { useI18n } from '@/i18n';
 import { PageHero } from '@/components/ui';
 import { countries, heroImage2 } from '@/data';
-import { supabase } from '@/lib/supabase';
 
 interface FormValues {
   country: string;
@@ -29,17 +28,18 @@ export default function RegisterPage() {
   const submit = async (event: FormEvent<HTMLFormElement>) => {
     event.preventDefault();
     setStatus('loading');
-    const { error } = await supabase.from('player_registrations').insert({
-      country: values.country,
-      pseudo: values.pseudo,
-      full_name: values.fullName,
-      email: values.email,
-      phone: values.phone,
-      level: values.level,
-      message: values.message || null,
-    });
-    setStatus(error ? 'error' : 'success');
-    if (!error) setValues(initialValues);
+    try {
+      const response = await fetch('/api/register', {
+        method: 'POST',
+        headers: { 'Content-Type': 'application/json' },
+        body: JSON.stringify(values),
+      });
+      if (!response.ok) throw new Error('Request failed');
+      setStatus('success');
+      setValues(initialValues);
+    } catch {
+      setStatus('error');
+    }
   };
 
   return (
@@ -72,7 +72,7 @@ export default function RegisterPage() {
               </form>
             )}
           </div>
-          <aside className="glass-card p-6 md:p-8 sticky top-24"><div className="flex items-center gap-3 mb-6"><Info className="w-5 h-5 text-cyan-400" /><h3 className="heading-display text-2xl text-white">{t('register.info.title')}</h3></div><ul className="space-y-4">{[1, 2, 3, 4, 5].map((n) => <li key={n} className="flex items-start gap-3 text-sm text-gray-400 leading-relaxed"><CheckCircle2 className="w-4 h-4 text-lime-500 flex-shrink-0 mt-0.5" />{t(`register.info.${n}`)}</li>)}</ul></aside>
+          <aside className="glass-card p-6 md:p-8 sticky top-24"><div className="flex items-center gap-3 mb-6"><Info className="w-5 h-5 text-purple-400" /><h3 className="heading-display text-2xl text-white">{t('register.info.title')}</h3></div><ul className="space-y-4">{[1, 2, 3, 4, 5].map((n) => <li key={n} className="flex items-start gap-3 text-sm text-gray-400 leading-relaxed"><CheckCircle2 className="w-4 h-4 text-lime-500 flex-shrink-0 mt-0.5" />{t(`register.info.${n}`)}</li>)}</ul></aside>
         </div>
       </section>
     </div>

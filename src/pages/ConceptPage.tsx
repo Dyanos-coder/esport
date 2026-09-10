@@ -8,9 +8,9 @@ export default function ConceptPage() {
 
   const pillars = [
     { icon: Trophy, key: 'competition', color: 'lime' },
-    { icon: Film, key: 'content', color: 'cyan' },
+    { icon: Film, key: 'content', color: 'purple' },
     { icon: Flag, key: 'nations', color: 'lime' },
-    { icon: Plane, key: 'destination', color: 'cyan' },
+    { icon: Plane, key: 'destination', color: 'purple' },
   ];
 
   return (
@@ -44,10 +44,10 @@ export default function ConceptPage() {
 
             {/* Positioning */}
             <div className="glass-card p-8 md:p-10 relative overflow-hidden group">
-              <div className="absolute -top-10 -right-10 w-40 h-40 bg-cyan-500/5 rounded-full blur-3xl group-hover:bg-cyan-500/10 transition-all" />
+              <div className="absolute -top-10 -right-10 w-40 h-40 bg-purple-500/5 rounded-full blur-3xl group-hover:bg-purple-500/10 transition-all" />
               <div className="relative">
-                <div className="w-14 h-14 rounded-xl bg-cyan-500/10 border border-cyan-500/20 flex items-center justify-center mb-6">
-                  <Target className="w-7 h-7 text-cyan-400" />
+                <div className="w-14 h-14 rounded-xl bg-purple-500/10 border border-purple-500/20 flex items-center justify-center mb-6">
+                  <Target className="w-7 h-7 text-purple-400" />
                 </div>
                 <h2 className="heading-display text-3xl text-white mb-4">
                   {t('concept.positioning.title')}
@@ -76,7 +76,7 @@ export default function ConceptPage() {
                 className="glass-card p-8 group hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
               >
                 <div className="flex items-start gap-5">
-                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 ${p.color === 'lime' ? 'bg-lime-500/10 border border-lime-500/20 text-lime-500' : 'bg-cyan-500/10 border border-cyan-500/20 text-cyan-400'}`}>
+                  <div className={`w-16 h-16 rounded-xl flex items-center justify-center flex-shrink-0 ${p.color === 'lime' ? 'bg-lime-500/10 border border-lime-500/20 text-lime-500' : 'bg-purple-500/10 border border-purple-500/20 text-purple-400'}`}>
                     <p.icon className="w-8 h-8" />
                   </div>
                   <div className="flex-1">
@@ -132,7 +132,7 @@ export default function ConceptPage() {
               <img src={cultureImage} alt="" className="w-full h-full object-cover transition-transform duration-700 group-hover:scale-110" />
               <div className="absolute inset-0 bg-gradient-to-t from-navy-900 to-transparent" />
               <div className="absolute bottom-0 p-6">
-                <span className="badge badge-cyan">Culture</span>
+                <span className="badge badge-purple">Culture</span>
               </div>
             </div>
             <div className="relative overflow-hidden rounded-2xl group h-[300px]">

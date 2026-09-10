@@ -16,6 +16,7 @@ const fr: Dict = {
   'nav.finale': 'La Finale',
   'nav.content': 'Contenus',
   'nav.partners': 'Partenaires',
+  'nav.project': 'Le Projet',
   'nav.cta': "S'inscrire",
 
   // Home - Hero
@@ -61,7 +62,7 @@ const fr: Dict = {
   // Concept
   'concept.hero.badge': 'LE CONCEPT',
   'concept.hero.title': 'Plus qu\'un tournoi.\nUne révolution e-sport africaine.',
-  'concept.hero.desc': 'L\'AFN eFootball Cup est un programme de divertissement complet qui mêle compétition e-sport de haut niveau, télé-réalité immersive et découverte touristique du Bénin.',
+  'concept.hero.desc': 'L\'KarreX est un programme de divertissement complet qui mêle compétition e-sport de haut niveau, télé-réalité immersive et découverte touristique du Bénin.',
   'concept.vision.title': 'NOTRE VISION',
   'concept.vision.desc': 'Démontrer que l\'Afrique peut organiser des événements e-sport de classe mondiale, révéler de nouveaux talents, et projeter une image moderne et dynamique du continent à travers le gaming.',
   'concept.positioning.title': 'POSITIONNEMENT',
@@ -170,7 +171,7 @@ const fr: Dict = {
   // Content
   'content.hero.badge': 'CONTENUS',
   'content.hero.title': 'DERRIÈRE LES ÉCRANS',
-  'content.hero.desc': 'Articles, vidéos, portraits et coulisses. Plongez dans l\'univers de l\'AFN eFootball Cup.',
+  'content.hero.desc': 'Articles, vidéos, portraits et coulisses. Plongez dans l\'univers de l\'KarreX.',
   'content.filter.all': 'Tout',
   'content.filter.articles': 'Articles',
   'content.filter.videos': 'Vidéos',
@@ -220,6 +221,7 @@ const en: Dict = {
   'nav.finale': 'The Finale',
   'nav.content': 'Content',
   'nav.partners': 'Partners',
+  'nav.project': 'The Project',
   'nav.cta': 'Register',
 
   // Home - Hero
@@ -265,7 +267,7 @@ const en: Dict = {
   // Concept
   'concept.hero.badge': 'THE CONCEPT',
   'concept.hero.title': 'More than a tournament.\nAn African e-sport revolution.',
-  'concept.hero.desc': 'The AFN eFootball Cup is a complete entertainment program blending top-level e-sport competition, immersive reality TV and tourism discovery of Benin.',
+  'concept.hero.desc': 'The KarreX is a complete entertainment program blending top-level e-sport competition, immersive reality TV and tourism discovery of Benin.',
   'concept.vision.title': 'OUR VISION',
   'concept.vision.desc': 'To show that Africa can host world-class e-sport events, reveal new talent, and project a modern, dynamic image of the continent through gaming.',
   'concept.positioning.title': 'POSITIONING',
@@ -374,7 +376,7 @@ const en: Dict = {
   // Content
   'content.hero.badge': 'CONTENT',
   'content.hero.title': 'BEHIND THE SCREENS',
-  'content.hero.desc': 'Articles, videos, portraits and behind-the-scenes. Dive into the AFN eFootball Cup universe.',
+  'content.hero.desc': 'Articles, videos, portraits and behind-the-scenes. Dive into the KarreX universe.',
   'content.filter.all': 'All',
   'content.filter.articles': 'Articles',
   'content.filter.videos': 'Videos',

@@ -1,5 +1,5 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Gamepad2, Globe } from 'lucide-react';
+import { Menu, X, Globe } from 'lucide-react';
 import { useRouter, type Route } from '@/router';
 import { useI18n, type Lang } from '@/i18n';
 
@@ -41,11 +41,8 @@ export default function Navbar() {
       <nav className="container-x flex items-center justify-between h-16 md:h-20">
         {/* Logo */}
         <button onClick={() => handleNav('home')} className="flex items-center gap-2 group">
-          <div className="w-9 h-9 rounded-lg bg-lime-500 flex items-center justify-center group-hover:shadow-[0_0_20px_rgba(182,245,0,0.5)] transition-all">
-            <Gamepad2 className="w-5 h-5 text-navy-900" strokeWidth={2.5} />
-          </div>
           <span className="font-display text-xl tracking-wide text-white">
-            AFN<span className="text-lime-500"> CUP</span>
+            KARRE<span className="text-lime-500">•X</span>
           </span>
         </button>
 

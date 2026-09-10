@@ -46,7 +46,7 @@ export default function CountriesPage() {
               <div className="text-xs text-gray-400 uppercase tracking-wide mt-1">{t('countries.status.qualifying')}</div>
             </div>
             <div>
-              <div className="heading-display text-3xl md:text-4xl text-cyan-400">{counts.open}</div>
+              <div className="heading-display text-3xl md:text-4xl text-purple-400">{counts.open}</div>
               <div className="text-xs text-gray-400 uppercase tracking-wide mt-1">{t('countries.status.open')}</div>
             </div>
           </div>
@@ -109,7 +109,7 @@ export default function CountriesPage() {
       <section className="pb-24">
         <div className="container-x">
           <div className="glass-card p-8 md:p-12 text-center">
-            <MapPin className="w-12 h-12 text-cyan-400 mx-auto mb-4" />
+            <MapPin className="w-12 h-12 text-purple-400 mx-auto mb-4" />
             <h3 className="heading-display text-2xl text-white mb-2">16 Nations Africaines</h3>
             <p className="text-sm text-gray-400 max-w-xl mx-auto">
               Du Maroc au nord à la RD Congo au sud, 16 pays convergent vers le Bénin pour la plus grande compétition e-sport du continent.

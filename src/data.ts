@@ -246,7 +246,7 @@ export const contentItems: ContentItem[] = [
     id: 'c5',
     type: 'article',
     title: 'eFootball en Afrique : l\'essor d\'une nouvelle discipline',
-    excerpt: 'Analyse du boom du gaming compétitif sur le continent et du rôle de l\'AFN eFootball Cup.',
+    excerpt: 'Analyse du boom du gaming compétitif sur le continent et du rôle de l\'KarreX.',
     date: '2026-09-01',
     image: 'https://images.pexels.com/photos/7862381/pexels-photo-7862381.jpeg?auto=compress&cs=tinysrgb&h=650&w=940',
   },

@@ -10,7 +10,8 @@ export type Route =
   | 'results'
   | 'finale'
   | 'content'
-  | 'partners';
+  | 'partners'
+  | 'project';
 
 interface RouterContextValue {
   route: Route;
