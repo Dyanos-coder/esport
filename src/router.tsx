@@ -20,21 +20,32 @@ interface RouterContextValue {
 
 const RouterContext = createContext<RouterContextValue | null>(null);
 
+const VALID_ROUTES: Route[] = [
+  'home', 'concept', 'countries', 'register', 'rules', 'players', 'results', 'finale', 'content', 'partners', 'project',
+];
+
+function getRouteFromHash(): Route {
+  const hash = window.location.hash.replace('#/', '');
+  return (VALID_ROUTES as string[]).includes(hash) ? (hash as Route) : 'home';
+}
+
 export function RouterProvider({ children }: { children: ReactNode }) {
-  const [route, setRoute] = useState<Route>('home');
+  const [route, setRoute] = useState<Route>(() => getRouteFromHash());
 
   const navigate = (r: Route) => {
     setRoute(r);
+    window.location.hash = `/${r}`;
     window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   useEffect(() => {
-    const onPopState = () => {
-      const hash = window.location.hash.replace('#/', '') || 'home';
-      setRoute(hash as Route);
+    const onHashChange = () => setRoute(getRouteFromHash());
+    window.addEventListener('popstate', onHashChange);
+    window.addEventListener('hashchange', onHashChange);
+    return () => {
+      window.removeEventListener('popstate', onHashChange);
+      window.removeEventListener('hashchange', onHashChange);
     };
-    window.addEventListener('popstate', onPopState);
-    return () => window.removeEventListener('popstate', onPopState);
   }, []);
 
   return <RouterContext.Provider value={{ route, navigate }}>{children}</RouterContext.Provider>;
