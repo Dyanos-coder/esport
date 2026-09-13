@@ -77,7 +77,14 @@ export default async function handler(req: VercelRequest, res: VercelResponse) {
     route.params?.forEach((name, i) => {
       (req.query as Record<string, string>)[name] = match[i + 1];
     });
-    await route.handler(req, res);
+    try {
+      await route.handler(req, res);
+    } catch (err) {
+      console.error(`[api] ${pathname} crashed:`, err);
+      if (!res.headersSent) {
+        res.status(500).json({ error: 'Server error', detail: err instanceof Error ? err.message : String(err) });
+      }
+    }
     return;
   }
 
