@@ -1,6 +1,6 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { RowDataPacket } from 'mysql2';
-import { getPool } from '../lib/db';
+import { getPool } from '../lib/db.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {

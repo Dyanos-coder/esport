@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { RowDataPacket } from 'mysql2';
-import { getPool } from '../../../lib/db';
-import { getSession } from '../../../lib/auth';
-import { computeStandings, type MatchRow } from '../../../lib/standings';
+import { getPool } from '../../../lib/db.js';
+import { getSession } from '../../../lib/auth.js';
+import { computeStandings, type MatchRow } from '../../../lib/standings.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   if (req.method !== 'GET') {

@@ -1,7 +1,7 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { QueryError, RowDataPacket } from 'mysql2';
-import { getPool } from '../../../lib/db';
-import { getSession } from '../../../lib/auth';
+import { getPool } from '../../../lib/db.js';
+import { getSession } from '../../../lib/auth.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const session = getSession(req);

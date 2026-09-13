@@ -1,9 +1,9 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import bcrypt from 'bcryptjs';
 import type { RowDataPacket, ResultSetHeader } from 'mysql2';
-import { getPool } from '../../lib/db';
-import { signSession, setSessionCookie } from '../../lib/auth';
-import { sendSignupConfirmationEmail } from '../../lib/email';
+import { getPool } from '../../lib/db.js';
+import { signSession, setSessionCookie } from '../../lib/auth.js';
+import { sendSignupConfirmationEmail } from '../../lib/email.js';
 
 interface SignupBody {
   email?: string;

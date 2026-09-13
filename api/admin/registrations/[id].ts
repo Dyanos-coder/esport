@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { RowDataPacket } from 'mysql2';
-import { getPool } from '../../../lib/db';
-import { getSession } from '../../../lib/auth';
-import { sendStatusChangeEmail } from '../../../lib/email';
+import { getPool } from '../../../lib/db.js';
+import { getSession } from '../../../lib/auth.js';
+import { sendStatusChangeEmail } from '../../../lib/email.js';
 
 const VALID_STATUSES = ['pending', 'accepted', 'rejected'];
 

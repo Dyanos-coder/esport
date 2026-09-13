@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import bcrypt from 'bcryptjs';
 import type { RowDataPacket } from 'mysql2';
-import { getPool } from '../../lib/db';
-import { signSession, setSessionCookie } from '../../lib/auth';
+import { getPool } from '../../lib/db.js';
+import { signSession, setSessionCookie } from '../../lib/auth.js';
 
 interface UserRow extends RowDataPacket {
   id: number;

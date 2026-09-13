@@ -1,8 +1,8 @@
 import type { VercelRequest, VercelResponse } from '@vercel/node';
 import type { RowDataPacket } from 'mysql2';
-import { getPool } from '../../../lib/db';
-import { getSession } from '../../../lib/auth';
-import { generateBracketSeeds } from '../../../lib/bracket';
+import { getPool } from '../../../lib/db.js';
+import { getSession } from '../../../lib/auth.js';
+import { generateBracketSeeds } from '../../../lib/bracket.js';
 
 export default async function handler(req: VercelRequest, res: VercelResponse) {
   const session = getSession(req);
