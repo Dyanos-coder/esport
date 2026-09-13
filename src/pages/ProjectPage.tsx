@@ -104,11 +104,10 @@ export default function ProjectPage() {
         </div>
         <div className="container-x relative flex flex-col lg:flex-row items-center gap-10 lg:gap-16">
           <div className="max-w-3xl">
-            <span className="badge badge-lime mb-6 animate-fade-in">PROJET KARRE-X</span>
-            <h1 className="heading-display text-4xl md:text-6xl lg:text-7xl text-white mb-6 animate-slide-up">
-              Football <span className="text-lime-500">•</span> Gaming <span className="text-lime-500">•</span> Téléréalité
+            <h1 className="heading-display text-2xl md:text-6xl lg:text-7xl text-white mb-6 animate-slide-up">
+              Gaming,Football,<span className="text-lime-500">Téléréalité</span>
             </h1>
-            <p className="text-base md:text-lg text-gray-300 max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
+            <p className="text-base md:text-lg text-white max-w-2xl leading-relaxed animate-slide-up" style={{ animationDelay: '0.1s' }}>
               Une grande compétition panafricaine autour d&apos;eFootball, pensée comme une expérience de divertissement,
               de contenu et de découverte du Bénin.
             </p>
@@ -124,7 +123,7 @@ export default function ProjectPage() {
       {/* CONTEXTE */}
       <section className="section-pad">
         <div className="container-x grid grid-cols-1 lg:grid-cols-3 gap-10 items-start">
-          <div className="lg:col-span-2 space-y-5 text-gray-300 leading-relaxed">
+          <div className="lg:col-span-2 space-y-5 text-white leading-relaxed">
             <span className="badge badge-lime mb-2">Contexte et justification</span>
             <p className="pt-2">
               Le gaming compétitif connaît une transformation profonde en Afrique. Au-delà du simple divertissement,
@@ -156,7 +155,7 @@ export default function ProjectPage() {
                 </div>
               ))}
             </div>
-            <p className="text-xs text-gray-500 mt-6 leading-relaxed">
+            <p className="text-xs text-white mt-6 leading-relaxed">
               Un rendez-vous annuel capable de circuler d&apos;un pays africain à l&apos;autre et de devenir une marque
               e-sport africaine identifiable.
             </p>
@@ -177,7 +176,7 @@ export default function ProjectPage() {
             {specificObjectives.map((obj) => (
               <div key={obj} className="glass-card-light p-4 flex items-start gap-3">
                 <CheckCircle2 className="w-4 h-4 text-lime-500 flex-shrink-0 mt-0.5" />
-                <span className="text-sm text-gray-300 leading-relaxed">{obj}</span>
+                <span className="text-sm text-white leading-relaxed">{obj}</span>
               </div>
             ))}
           </div>
@@ -194,7 +193,7 @@ export default function ProjectPage() {
           <div className="order-1 lg:order-2">
             <span className="badge badge-lime mb-4"><Trophy className="w-3.5 h-3.5" /> Axe 1 — La compétition</span>
             <h2 className="heading-display text-3xl md:text-5xl text-white mb-5">Le cœur du projet</h2>
-            <p className="text-gray-400 leading-relaxed mb-8">
+            <p className="text-white leading-relaxed mb-8">
               Une compétition eFootball structurée autour de représentants de plusieurs nations africaines. Chaque
               duo représente les couleurs de son pays, créant une dimension de fierté nationale et de rivalité positive.
             </p>
@@ -213,7 +212,7 @@ export default function ProjectPage() {
           <div>
             <span className="badge badge-purple mb-4"><Plane className="w-3.5 h-3.5" /> Axe 2 — L&apos;expérience panafricaine</span>
             <h2 className="heading-display text-3xl md:text-5xl text-white mb-5">Vivre une expérience, pas juste jouer</h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <p className="text-white leading-relaxed mb-6">
               Les joueurs ne viennent pas simplement au Bénin pour jouer. Le séjour intègre l&apos;accueil des
               délégations, la découverte culturelle, des challenges et des activations partenaires.
             </p>
@@ -245,7 +244,7 @@ export default function ProjectPage() {
           <div className="order-1 lg:order-2">
             <span className="badge badge-purple mb-4"><Film className="w-3.5 h-3.5" /> Axe 3 — Contenu & télé-réalité</span>
             <h2 className="heading-display text-3xl md:text-5xl text-white mb-5">Une histoire à suivre</h2>
-            <p className="text-gray-400 leading-relaxed mb-6">
+            <p className="text-white leading-relaxed mb-6">
               Le public découvre les joueurs, leurs parcours, leurs pays, leurs ambitions et leurs rivalités.
               L&apos;objectif : ne plus soutenir seulement un joueur, mais une histoire et une nation.
             </p>
@@ -313,7 +312,7 @@ export default function ProjectPage() {
                 <p className="text-sm text-purple-400 font-semibold mb-4">{phase.objective}</p>
                 <ul className="space-y-2">
                   {phase.items.map((item) => (
-                    <li key={item} className="flex items-start gap-2 text-sm text-gray-400 leading-relaxed">
+                    <li key={item} className="flex items-start gap-2 text-sm text-white leading-relaxed">
                       <CheckCircle2 className="w-3.5 h-3.5 text-lime-500 flex-shrink-0 mt-0.5" />
                       {item}
                     </li>
@@ -336,7 +335,7 @@ export default function ProjectPage() {
               digitale, sportive, culturelle et médiatique. »
             </p>
           </div>
-          <p className="text-center text-gray-400 max-w-2xl mx-auto mb-8 leading-relaxed">
+          <p className="text-center text-white max-w-2xl mx-auto mb-8 leading-relaxed">
             Une présence sur plusieurs semaines grâce aux qualifications, aux contenus et à la phase finale — avec
             des activations physiques, digitales et des contenus co-brandés avant, pendant et après l&apos;événement.
           </p>
@@ -363,7 +362,7 @@ export default function ProjectPage() {
             <p className="text-gradient-purple font-display text-xl md:text-2xl uppercase tracking-wide mb-5">
               Du gaming aux opportunités.
             </p>
-            <p className="text-gray-400 max-w-2xl mx-auto leading-relaxed">
+            <p className="text-white max-w-2xl mx-auto leading-relaxed">
               Favoriser l&apos;accès des jeunes femmes au gaming, à l&apos;e-sport et aux métiers du numérique — une
               véritable passerelle vers la formation, la compétition, la création de contenus et l&apos;emploi.
             </p>
@@ -372,7 +371,7 @@ export default function ProjectPage() {
             {girlsSections.map((g) => (
               <div key={g.title} className="glass-card p-6 hover:border-purple-500/30 transition-all">
                 <h3 className="font-display text-lg text-lime-500 tracking-wide mb-3">{g.title}</h3>
-                <p className="text-sm text-gray-400 leading-relaxed">{g.desc}</p>
+                <p className="text-sm text-white leading-relaxed">{g.desc}</p>
               </div>
             ))}
           </div>
@@ -390,7 +389,7 @@ export default function ProjectPage() {
             <div className="relative">
               <Sparkles className="w-12 h-12 text-lime-500 mx-auto mb-6" />
               <h2 className="heading-display text-3xl md:text-5xl text-white mb-4">Construisons KarreX ensemble</h2>
-              <p className="text-base md:text-lg text-gray-400 max-w-2xl mx-auto mb-8">
+              <p className="text-base md:text-lg text-white max-w-2xl mx-auto mb-8">
                 Joueur, partenaire ou média — rejoignez la première expérience panafricaine de football, gaming et télé-réalité.
               </p>
               <div className="flex flex-col sm:flex-row gap-4 justify-center">

@@ -1,7 +1,8 @@
 import { useState, useEffect } from 'react';
-import { Menu, X, Globe } from 'lucide-react';
+import { Menu, X, Globe, LogIn, User as UserIcon, ShieldCheck } from 'lucide-react';
 import { useRouter, type Route } from '@/router';
 import { useI18n, type Lang } from '@/i18n';
+import { useAuth } from '@/auth';
 
 const navItems: { route: Route; key: string }[] = [
   { route: 'home', key: 'nav.home' },
@@ -18,6 +19,7 @@ const navItems: { route: Route; key: string }[] = [
 export default function Navbar() {
   const { route, navigate } = useRouter();
   const { t, lang, setLang } = useI18n();
+  const { user } = useAuth();
   const [open, setOpen] = useState(false);
   const [scrolled, setScrolled] = useState(false);
 
@@ -81,10 +83,22 @@ export default function Navbar() {
             ))}
           </div>
 
-          {/* CTA */}
-          <button onClick={() => handleNav('register')} className="hidden md:inline-flex btn-primary !py-2 !px-4 !text-xs">
-            {t('nav.cta')}
-          </button>
+          {/* Auth */}
+          {user ? (
+            <button onClick={() => handleNav(user.role === 'admin' ? 'admin' : 'account')} className="hidden md:inline-flex btn-primary !py-2 !px-4 !text-xs">
+              {user.role === 'admin' ? <ShieldCheck className="w-4 h-4" /> : <UserIcon className="w-4 h-4" />}
+              {user.role === 'admin' ? 'Admin' : 'Mon compte'}
+            </button>
+          ) : (
+            <>
+              <button onClick={() => handleNav('login')} className="hidden md:inline-flex items-center gap-1.5 text-sm font-medium text-gray-400 hover:text-white transition-colors">
+                <LogIn className="w-4 h-4" /> Connexion
+              </button>
+              <button onClick={() => handleNav('register')} className="hidden md:inline-flex btn-primary !py-2 !px-4 !text-xs">
+                {t('nav.cta')}
+              </button>
+            </>
+          )}
 
           {/* Mobile toggle */}
           <button
@@ -127,9 +141,21 @@ export default function Navbar() {
                 </button>
               ))}
             </div>
-            <button onClick={() => handleNav('register')} className="btn-primary mt-2">
-              {t('nav.cta')}
-            </button>
+            {user ? (
+              <button onClick={() => handleNav(user.role === 'admin' ? 'admin' : 'account')} className="btn-primary mt-2">
+                {user.role === 'admin' ? <ShieldCheck className="w-4 h-4" /> : <UserIcon className="w-4 h-4" />}
+                {user.role === 'admin' ? 'Admin' : 'Mon compte'}
+              </button>
+            ) : (
+              <>
+                <button onClick={() => handleNav('login')} className="btn-ghost mt-2">
+                  <LogIn className="w-4 h-4" /> Connexion
+                </button>
+                <button onClick={() => handleNav('register')} className="btn-primary mt-2">
+                  {t('nav.cta')}
+                </button>
+              </>
+            )}
           </div>
         </div>
       )}

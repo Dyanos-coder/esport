@@ -11,7 +11,10 @@ export type Route =
   | 'finale'
   | 'content'
   | 'partners'
-  | 'project';
+  | 'project'
+  | 'login'
+  | 'account'
+  | 'admin';
 
 interface RouterContextValue {
   route: Route;
@@ -22,6 +25,7 @@ const RouterContext = createContext<RouterContextValue | null>(null);
 
 const VALID_ROUTES: Route[] = [
   'home', 'concept', 'countries', 'register', 'rules', 'players', 'results', 'finale', 'content', 'partners', 'project',
+  'login', 'account', 'admin',
 ];
 
 function getRouteFromHash(): Route {

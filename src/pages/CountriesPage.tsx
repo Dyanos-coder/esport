@@ -2,8 +2,8 @@ import { useState } from 'react';
 import { CheckCircle2, Clock, XCircle, Users, MapPin } from 'lucide-react';
 import { useI18n } from '@/i18n';
 import { PageHero } from '@/components/ui';
-import { countries, type Country } from '@/data';
 import { heroImage2 } from '@/data';
+import { useCountries, type ApiCountry } from '@/useCountries';
 
 const statusConfig = {
   qualified: { badge: 'badge-success', icon: CheckCircle2, key: 'countries.status.qualified' },
@@ -14,7 +14,8 @@ const statusConfig = {
 
 export default function CountriesPage() {
   const { t } = useI18n();
-  const [filter, setFilter] = useState<'all' | 'open' | 'qualifying' | 'qualified'>('all');
+  const { countries, loading } = useCountries();
+  const [filter, setFilter] = useState<'all' | 'open' | 'qualifying' | 'qualified' | 'closed'>('all');
 
   const filtered = filter === 'all' ? countries : countries.filter((c) => c.status === filter);
 
@@ -63,7 +64,7 @@ export default function CountriesPage() {
             >
               {t('players.filter.all')}
             </button>
-            {(Object.keys(statusConfig) as Country['status'][]).map((s) => (
+            {(Object.keys(statusConfig) as ApiCountry['status'][]).map((s) => (
               <button
                 key={s}
                 onClick={() => setFilter(s)}
@@ -75,33 +76,37 @@ export default function CountriesPage() {
           </div>
 
           {/* Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
-            {filtered.map((country) => {
-              const cfg = statusConfig[country.status];
-              return (
-                <div
-                  key={country.code}
-                  className="glass-card p-6 group hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
-                >
-                  <div className="absolute -top-8 -right-8 w-24 h-24 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-all" />
-                  <div className="relative">
-                    <div className="text-5xl mb-4">{country.flag}</div>
-                    <h3 className="font-bold text-white text-lg mb-1">{country.name}</h3>
-                    <div className="text-xs text-gray-500 mb-3">{country.code}</div>
-                    <div className="flex items-center justify-between">
-                      <span className={`badge ${cfg.badge} !text-[10px]`}>
-                        <cfg.icon className="w-3 h-3" />
-                        {t(cfg.key)}
-                      </span>
-                      <span className="text-xs text-gray-400">
-                        {country.players}/2 {t('countries.players')}
-                      </span>
+          {loading ? (
+            <div className="text-center text-gray-500 py-16">Chargement...</div>
+          ) : (
+            <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-4 gap-4">
+              {filtered.map((country) => {
+                const cfg = statusConfig[country.status];
+                return (
+                  <div
+                    key={country.id}
+                    className="glass-card p-6 group hover:border-lime-500/30 transition-all duration-300 hover:-translate-y-1 relative overflow-hidden"
+                  >
+                    <div className="absolute -top-8 -right-8 w-24 h-24 bg-lime-500/5 rounded-full blur-2xl group-hover:bg-lime-500/10 transition-all" />
+                    <div className="relative">
+                      <div className="text-5xl mb-4">{country.flag}</div>
+                      <h3 className="font-bold text-white text-lg mb-1">{country.name}</h3>
+                      <div className="text-xs text-gray-500 mb-3">{country.code}</div>
+                      <div className="flex items-center justify-between">
+                        <span className={`badge ${cfg.badge} !text-[10px]`}>
+                          <cfg.icon className="w-3 h-3" />
+                          {t(cfg.key)}
+                        </span>
+                        <span className="text-xs text-gray-400">
+                          {country.qualified_count}/2 {t('countries.players')}
+                        </span>
+                      </div>
                     </div>
                   </div>
-                </div>
-              );
-            })}
-          </div>
+                );
+              })}
+            </div>
+          )}
         </div>
       </section>
 
